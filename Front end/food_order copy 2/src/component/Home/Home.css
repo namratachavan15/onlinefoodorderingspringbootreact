@@ -1,0 +1,16 @@
+.banner {
+  /* background-image: url("https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=600"); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 90vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=600') center/cover no-repeat;
+
+}
+
+.cover {
+  margin-top: 65px;
+  width: 100%;
+  height: 90vh;
+  opacity: 0.4;
+}

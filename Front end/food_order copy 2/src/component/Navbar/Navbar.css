@@ -1,0 +1,21 @@
+/* Navbar Customization */
+.navbar {
+    z-index: 50;
+  }
+  
+  .navbar-brand {
+    font-weight: bold;
+  }
+  
+  .nav-item .btn {
+    padding: 0;
+  }
+  
+  .nav-item .btn .fa {
+    font-size: 1.5rem;
+  }
+  
+  .badge {
+    font-size: 0.8rem;
+  }
+  

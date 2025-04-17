@@ -1,0 +1,48 @@
+.profile-container {
+    display: flex;
+    /* height: 100vh; */
+    overflow: hidden;
+  }
+  
+  .sidebar {
+    width: 20%;
+    position: fixed!important;
+    top: 85px;
+    left: 0;
+    height: 90vh;
+    overflow: hidden;
+    border-right: 1px solid #dee2e6; /* Bootstrap's border color */
+    background-color: #ffffff;
+    z-index: 1000;
+  }
+  
+  .main-content {
+    margin-left: 20%;
+    width: 80%;
+    /* height: 100vh;
+    overflow-y: auto; */
+    padding: 1rem;
+  }
+  
+  .profile-nav {
+    height: 100%;
+    padding-top: 2rem;
+  }
+  
+  .nav-item {
+    padding: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    height: 80px;
+    transition: background-color 0.2s ease;
+  }
+  
+  
+  .pt-6 {
+    padding-top: 0.5rem!important;
+}
+  .nav-icon {
+    margin-right: 1rem;
+  }
+  

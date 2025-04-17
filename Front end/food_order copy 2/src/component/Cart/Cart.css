@@ -1,0 +1,18 @@
+/* Custom input styling for black background */
+.custom-placeholder {
+    background-color:#0D0D0D !important;
+    color: white !important;
+  }
+  
+  .custom-placeholder::placeholder {
+    color: white !important;  /* Placeholder color */
+  }
+  
+  /* Keep background black even when focused */
+  .custom-placeholder:focus {
+    background-color:#0D0D0D !important;
+    color: white !important;
+    border: 1px solid #E91E63;  /* Optional: Add a border color to make the input field stand out */
+    outline: none; /* Optional: Removes default outline */
+  }
+  
