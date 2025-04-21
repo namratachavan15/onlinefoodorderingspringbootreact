@@ -1,20 +1,26 @@
 import React from 'react';
 import MenuTable from './../Menu/MenuTable';
 import OrderTable from '../Orders/OrderTable';
-import { Row, Col } from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
 
 const Dashboard = () => {
   return (
-    <div>
-      <Row>
-        <Col xs="12" md="6" lg="6" xl="6" className="mb-4">
-          <MenuTable />
-        </Col>
-        <Col xs="12" md="6" lg="6" xl="6">
-          <OrderTable filterValue={"ALL"} />
+    <Container fluid className="py-4">
+      <Row className="mb-4">
+        <Col xs="12">
+          <div className="table-responsive">
+            <MenuTable />
+          </div>
         </Col>
       </Row>
-    </div>
+      <Row>
+        <Col xs="12">
+          <div className="table-responsive">
+            <OrderTable filterValue={"ALL"} />
+          </div>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 
