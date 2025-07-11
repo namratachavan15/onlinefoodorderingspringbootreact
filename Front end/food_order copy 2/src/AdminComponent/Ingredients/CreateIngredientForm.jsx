@@ -14,7 +14,7 @@ import { useIngredients } from "../../component/State/Ingredient/IngredientsCont
 
 const CreateIngredientForm = () => {
   const jwt = localStorage.getItem("jwt");
-  const { createIngredient, category } = useIngredients();
+  const { createIngredient, category,getIngredientsOfRestaurant } = useIngredients();
   const { usersRestaurant } = useRestaurantContext();
 
   const [formData, setFormData] = useState({
@@ -30,7 +30,9 @@ const CreateIngredientForm = () => {
     };
     createIngredient({ data, jwt });
   };
+getIngredientsOfRestaurant({ id: usersRestaurant.id, jwt });
 
+  setFormData({ name: "", categoryId: "" });
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
