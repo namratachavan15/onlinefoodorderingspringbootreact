@@ -16,7 +16,7 @@ const CreateIngredientCategoryForm = () => {
   const [formData, setFormData] = useState({ name: "" });
   const jwt = localStorage.getItem("jwt");
 
-  const { createIngredientCategory } = useIngredients();
+  const { createIngredientCategory,getIngredientsCategory } = useIngredients();
   const { usersRestaurant } = useRestaurantContext();
 
   const handleSubmit = (e) => {
@@ -26,7 +26,9 @@ const CreateIngredientCategoryForm = () => {
       restaurantId: usersRestaurant.id,
     };
     createIngredientCategory({ data, jwt });
-  
+  getIngredientsCategory({ id: usersRestaurant.id, jwt });
+
+  setFormData({ name: "" });
   };
 
   const handleInputChange = (e) => {
