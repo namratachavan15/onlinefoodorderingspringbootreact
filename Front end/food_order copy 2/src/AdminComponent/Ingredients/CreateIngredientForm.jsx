@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Form,
   FormGroup,
@@ -14,13 +14,24 @@ import { useIngredients } from "../../component/State/Ingredient/IngredientsCont
 
 const CreateIngredientForm = () => {
   const jwt = localStorage.getItem("jwt");
-  const { createIngredient, category,getIngredientsOfRestaurant } = useIngredients();
+  const {
+    createIngredient,
+    category,
+    getIngredientsOfRestaurant,
+  } = useIngredients();
   const { usersRestaurant } = useRestaurantContext();
 
   const [formData, setFormData] = useState({
     name: "",
     categoryId: "",
   });
+
+  // ✅ Only run this once when restaurant and jwt are available
+  useEffect(() => {
+    if (usersRestaurant?.id && jwt) {
+      getIngredientsOfRestaurant({ id: usersRestaurant.id, jwt });
+    }
+  }, [usersRestaurant?.id, jwt]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -29,10 +40,11 @@ const CreateIngredientForm = () => {
       restaurantId: usersRestaurant.id,
     };
     createIngredient({ data, jwt });
-  };
-getIngredientsOfRestaurant({ id: usersRestaurant.id, jwt });
 
-  setFormData({ name: "", categoryId: "" });
+    // ✅ Clear the form only after submit
+    setFormData({ name: "", categoryId: "" });
+  };
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -90,15 +102,15 @@ getIngredientsOfRestaurant({ id: usersRestaurant.id, jwt });
                 value={formData.categoryId}
                 onChange={handleInputChange}
                 style={{
-                  backgroundColor: "#333", // Dark background
-                  color: "#fff", // White text
-                  borderColor: "#444", // Light border
+                  backgroundColor: "#333",
+                  color: "#fff",
+                  borderColor: "#444",
                   borderRadius: "8px",
                   padding: "10px",
                   fontSize: "16px",
-                  appearance: "none", // Removes default browser styling
-                  WebkitAppearance: "none", // Safari
-                  MozAppearance: "none", // Firefox
+                  appearance: "none",
+                  WebkitAppearance: "none",
+                  MozAppearance: "none",
                 }}
               >
                 <option
@@ -112,7 +124,7 @@ getIngredientsOfRestaurant({ id: usersRestaurant.id, jwt });
                     <option
                       key={item.id}
                       value={item.id}
-                      style={{ backgroundColor: "#333", color: "#fff" }} // Custom option style
+                      style={{ backgroundColor: "#333", color: "#fff" }}
                     >
                       {item.name}
                     </option>
