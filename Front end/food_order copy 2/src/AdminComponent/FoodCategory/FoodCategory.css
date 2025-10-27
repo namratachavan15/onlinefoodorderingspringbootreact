@@ -1,0 +1,64 @@
+/* Main wrapper */
+.category-form-wrapper {
+ /* background-color: #121212;*/
+  /* min-height: 100vh; */
+  padding: 20px 10px;
+}
+
+/* Form container */
+.formcategory {
+  background-color: #1c1c1c;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  width: 250px;
+  max-width: 600px;
+  margin-left:-30px;
+}
+
+/* Input styles */
+.formcategory input {
+  width: 100%;
+  background-color: #2a2a2a;
+  color: #fff;
+  border: 1px solid #e91e63; /* highlight border to see input */
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 16px;
+  margin-top: 8px;
+}
+
+/* Label styles */
+.formcategory label {
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Button styles */
+.formcategory button {
+  background-color: #e91e63;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 16px;
+  width: 100%;
+  margin-top: 10px;
+  box-shadow: 0 4px 8px rgba(233, 30, 99, 0.3);
+}
+
+/* Mobile-specific adjustments */
+/* Remove fixed height */
+@media screen and (max-width: 576px) {
+  .formcategory {
+    padding: 15px;
+    max-width: 100%;
+    margin-left: 0; /* remove negative margin */
+  }
+
+  .category-form-wrapper {
+    min-height: 100vh; /* make it responsive */
+    padding: 20px 10px;
+  }
+}
+
