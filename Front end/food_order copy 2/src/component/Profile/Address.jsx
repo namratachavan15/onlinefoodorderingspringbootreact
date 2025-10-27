@@ -13,9 +13,9 @@ const Address = () => {
       </Container>
     );
   }
- 
+ console.log("user",user)
   return (
-    <Container fluid className="bg-dark text-white min-vh-1000  py-5" style={{height:'800px'}} >
+    <Container fluid className=" text-white min-vh-1000  py-5"  >
       <h3 className="text-center border-bottom pb-3 mb-4">Your Addresses</h3>
       <Row className="gx-4 gy-4 justify-content-center px-2">
   {user.address.map((address) => (
