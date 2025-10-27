@@ -5,3 +5,35 @@
   .badge-danger {
     background-color: #dc3545 !important;
   }
+  .card{
+    width:250px;
+  }
+
+  .bg-dark{
+    width:max-content;
+  }
+  .card1{
+    flex: 0 0 auto;
+    width: 100%;
+  }
+  @media screen and (min-width: 500px) and (max-width:800px) {
+ .card{
+    width: 350px;
+ }
+ .bg-dark{
+  margin:37px;
+ }
+  }
+
+@media screen and (max-width:500px) {
+
+   .card1{
+    padding: 18px !important;
+    margin-left: -56px !important;;
+   }
+   .bg-dark
+   {
+    width: 277px;
+    margin-top: 39px;
+   }
+}
