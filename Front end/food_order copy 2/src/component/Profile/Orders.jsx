@@ -1,40 +1,45 @@
-import React from 'react'
-import OrderCard from './OrderCard'
+import React, { useEffect } from 'react';
+import OrderCard from './OrderCard';
 import { useNavigate } from 'react-router-dom';
 import { useOrderContext } from '../State/Order/OrderContext';
 import { useAuth } from '../Auth/AuthContext';
-import { useEffect } from 'react';
+ import './Orders.css'
 const Orders = () => {
-  const { auth } = useAuth(); // Get auth from AuthContext
-  const { orders, getUsersOrders } = useOrderContext(); // Get orders and action from OrderContext
+  const { auth } = useAuth();
+  const { orders, getUsersOrders } = useOrderContext();
   const navigate = useNavigate();
 
-  // Extract JWT from auth context if available
-  const jwt = auth?.jwt || localStorage.getItem('jwt'); // Fallback to localStorage if auth is unavailable
- 
+  const jwt = auth?.jwt || localStorage.getItem('jwt');
+
   useEffect(() => {
-    // Only call getUsersOrders if JWT is available
     if (jwt) {
-      console.log('Fetching user orders with JWT:', jwt);
-      getUsersOrders(jwt); // Fetch orders
-    } else {
-      console.log('JWT is not available');
+      getUsersOrders(jwt);
     }
-  }, [jwt]); // Depend on jwt to trigger the effect when it changes
-  
-  // Debugging log for the orders state
- 
-  
+  }, [jwt]);
+
   return (
-    <div className='d-flex flex-column align-items-center' style={{backgroundColor:"#212529",height:"800px"}}>
-      <h1 className=' text-center  font-weight-bold' style={{paddingTop:' 0.75rem',paddingBottom: '0.75rem',fontSize: '1.25rem',lineHeight: '0.75rem'}}>My Orders</h1>
-      <div className='d-flex flex-column w-50 w-lg-50' style={{height:'50px'}}>
-        {
-         orders.map((order)=>order.items.map((item,index) =><OrderCard key={index} item={item} orders={order}/>))
-        }
+    <div className="container py-3">
+    <h2 className="text-white mb-4 text-center">My Orders</h2>
+  
+    <div className="row justify-content-center">
+      <div className="col-lg-8 col-md-10 col-sm-12">
+        {orders.length > 0 ? (
+          orders.map((order, orderIndex) =>
+            order.items.map((item, itemIndex) => (
+              <OrderCard
+                key={`${orderIndex}-${itemIndex}`}
+                item={item}
+                orders={order}
+              />
+            ))
+          )
+        ) : (
+          <p className="text-white text-center">No orders available.</p>
+        )}
       </div>
     </div>
-  )
-}
+  </div>
+    );
+};
 
-export default Orders
+export default Orders;
