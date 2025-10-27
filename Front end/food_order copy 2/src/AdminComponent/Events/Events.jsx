@@ -32,7 +32,6 @@ const Events = () => {
 const handleSubmit = (e) => {
   e.preventDefault();
  
-
   if (!usersRestaurant || !usersRestaurant.id) {
     console.error("Restaurant ID is missing.");
     return; // Prevent submission if Restaurant ID is not available
@@ -53,11 +52,10 @@ const handleSubmit = (e) => {
   if (error) return <div>Error: {error.message}</div>;
 
   return (
-    <div>
+    <div style={{marginTop:'20px',marginLeft:'50px'}}>
       <Button onClick={handleOpen} style={{backgroundColor:"#E91E63"}}>
         Create Event
       </Button>
-
       <Modal isOpen={open} toggle={handleClose}>
         
         <ModalBody  style={{ backgroundColor: '#191919', color: 'white' }}>
