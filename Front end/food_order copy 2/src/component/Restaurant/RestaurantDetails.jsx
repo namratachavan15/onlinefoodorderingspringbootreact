@@ -5,7 +5,8 @@ import MenuCard from './MenuCard';
 import { useParams } from 'react-router-dom';
 import { useRestaurantContext } from '../State/Restaurant/RestaurantContext';
 import { useMenuItemContext } from '../State/Menu/MenuItemContext';
-
+import './RestaurantCard.css'
+import './RestaurantDetails.css'
 const foodTypes = [
   { label: "All", value: "all" },
   { label: "Vegetarian Only", value: "vegetarian" },
@@ -73,7 +74,7 @@ const RestaurantDetails = () => {
           </Col>
           <Col xs={12} lg={6} style={{ height: '300px' }}>
             <Image
-              className='w-100 '
+              className='w-100'
               src="https://media.istockphoto.com/id/1131393938/photo/very-stylish-indian-gourmet-restaurant.jpg?s=2048x2048&w=is&k=20&c=d7djnSC6-uLAjpdM8GPwAJP7sp2v1F4kU3f_0Bz0xDc="
               alt="Restaurant Interior"
               fluid
@@ -152,7 +153,7 @@ const RestaurantDetails = () => {
         <Row className="g-4" style={{width:'600px',marginLeft:'20px'}}>
           {menuItems.length > 0 ? (
             menuItems.map((item, index) => (
-              <Col key={index} xs={12}>
+              <Col key={index} className='menuItem'>
                 <MenuCard item={item} />
               </Col>
             ))
