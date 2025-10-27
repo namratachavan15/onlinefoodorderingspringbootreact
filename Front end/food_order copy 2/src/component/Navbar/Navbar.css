@@ -18,4 +18,40 @@
   .badge {
     font-size: 0.8rem;
   }
-  
+  /* Make the navbar items wrap nicely on small screens */
+.navcss .container {
+  flex-wrap: wrap !important;
+}
+
+/* On very small screens, search input fills full width */
+@media (max-width: 576px) {
+  .navcss input.form-control {
+    flex-grow: 1 !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 0.5rem;
+  }
+
+  .navcss > .container > div.d-flex {
+    justify-content: flex-start !important;
+  }
+}
+
+.btnsearch
+{
+  display: none;
+}
+@media screen and (max-width: 500px) {
+ .btnsearch .txtInput{
+    display: none!important;
+  }
+  #txtinput
+  {
+     display: none!important;
+  }
+  Input
+  {
+    display: none!important;
+    visibility: hidden;
+  }
+}
