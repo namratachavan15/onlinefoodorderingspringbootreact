@@ -108,3 +108,20 @@ body {
   }
 }
 
+@media screen and (max-width: 500px) {
+ 
+ 
+  #txtinput
+  {
+    display: none!important;
+  } 
+  .btnSearch
+  {
+    display: none!important;
+  }
+  .register
+  {
+    margin-top: 68px!important;
+  }
+ 
+}
