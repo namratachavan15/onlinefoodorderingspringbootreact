@@ -24,17 +24,20 @@ const RegisterForm = () => {
   };
 
   return (
-    <div className="d-flex justify-content-center align-items-center" style={{ minHeight: '400px' }}>
+    <div className=" d-flex justify-content-center align-items-center" style={{ minHeight: '400px' }}>
       <div style={{ backgroundColor: '#0D0D0D', padding: '10px', borderRadius: '8px', width: '80%', maxWidth: '400px' }}>
-        <h5 className='text-center'>REGISTER</h5>
+        <h5 className='text-center text-white' >REGISTER</h5>
 
         <form onSubmit={handleSubmit}>
           <FormGroup>
-            <Label for="fullName">Full Name</Label>
+            <Label for="fullName" style={{ color: 'white' }}>Full Name</Label>
             <Input
               type="text"
               id="fullName"
-              name="fullName"  // Add name attribute
+              name="fullName"
+                // Add name attribute
+              
+                 className="form-control"
               placeholder="Enter your full name"
               value={formData.fullName}  // Use formData.fullName
               onChange={handleChange}  // Use handleChange to update formData
@@ -43,7 +46,7 @@ const RegisterForm = () => {
           </FormGroup>
 
           <FormGroup>
-            <Label for="email">Email</Label>
+            <Label for="email" style={{ color: 'white' }}>Email</Label>
             <Input
               type="email"
               id="email"
@@ -56,7 +59,7 @@ const RegisterForm = () => {
           </FormGroup>
 
           <FormGroup>
-            <Label for="password">Password</Label>
+            <Label for="password" style={{ color: 'white' }}>Password</Label>
             <Input
               type="password"
               id="password"
@@ -69,7 +72,7 @@ const RegisterForm = () => {
           </FormGroup>
 
           <FormGroup>
-            <Label for="role">Role</Label>
+            <Label for="role" style={{ color: 'white' }}>Role</Label>
             <select
               id="role"
               name="role"  // Add name attribute
@@ -89,7 +92,7 @@ const RegisterForm = () => {
         </form>
 
         <div className="text-center mt-3">
-          <p>If you have an account already? 
+          <p style={{ color: 'white' }}>If you have an account already? 
             <Button color="link" style={{ color: '#E91E63' }} onClick={() => navigate("/account/login")}>LOGIN</Button>
           </p>
         </div>
