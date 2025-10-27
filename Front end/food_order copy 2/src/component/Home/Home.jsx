@@ -56,7 +56,7 @@ const Home = () => {
 
       <section className="px-5 lg:px-20 pt-10">
         <h1 className="text-2xl font-semibold text-gray-400 pb-5">Order From Our Handpicked Favourites</h1>
-        <div className="flex flex-wrap items-center justify-normal g-1">
+        <div className="flex flex-wrap items-center justify-normal g-3" style={{gap:'150px'}}>
 
           {
             restaurants.length > 0 ? (
