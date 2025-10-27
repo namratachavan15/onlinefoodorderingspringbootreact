@@ -36,28 +36,24 @@ const Cart = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    const data = {
-      jwt: jwt,
-      order: {
-        restaurantId: restaurant?.id,
-        deliveryAddress: {
-          fullName: user?.fullName || '',
-          streetAddress: formData.streetAddress,
-          city: formData.city,
-          state: formData.state,
-          postalCode: formData.pincode,
-          country: 'India',
-        },
-        cartItems: cart.items,
+  
+    const orderData = {
+      restaurantId: restaurant?.id,
+      deliveryAddress: {
+        fullName: user?.fullName || '',
+        streetAddress: formData.streetAddress,
+        city: formData.city,
+        state: formData.state,
+        postalCode: formData.pincode,
+        country: 'India',
       },
+      cartItems: cart.items,
     };
-
-    await createOrder(data);
+  
+    await createOrder({ order: orderData, jwt });
     await clearCart(jwt);
-    navigate('/payment/success/');
   };
-
+  
   const createOrderUsingSelectedAddress = () => {
     console.log('Address selected!');
   };
@@ -139,7 +135,7 @@ const Cart = () => {
         </Row>
       </main>
 
-      <Modal isOpen={open} toggle={handleClose} className="custom-modal" style={{ width: '450px' }}>
+      <Modal isOpen={open} toggle={handleClose} className="custom-modal" style={{ width: '450px',marginTop:'150px' }}>
         <Form onSubmit={handleSubmit} style={{ backgroundColor: '#0D0D0D' }} className="p-4">
           <div className="modal-body" style={{ backgroundColor: '#0D0D0D' }}>
             <FormGroup>
