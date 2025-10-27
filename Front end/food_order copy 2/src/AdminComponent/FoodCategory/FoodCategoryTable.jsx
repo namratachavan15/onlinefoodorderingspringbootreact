@@ -17,11 +17,17 @@ const FoodCategoryTable = () => {
   }, [usersRestaurant?.id, jwt]);
 
   return (
-    <div className="p-3" style={{ backgroundColor: '#191919', color: 'white', minHeight: '100vh' }}>
+    <div className="p-3" style={{ backgroundColor: '#191919', color: 'white'}}>
       <Card className="w-100" style={{ backgroundColor: '#1e1e1e', color: 'white', border: 'none' }}>
         <CardHeader className='d-flex justify-content-between align-items-center'>
           <h5 className="mb-0">Food Category</h5>
-          <IoMdCreate onClick={toggle} style={{ cursor: 'pointer' }} size={24} />
+      <div 
+  onClick={toggle} 
+  style={{ cursor: 'pointer', padding: '8px', display: 'inline-block' }}
+>
+  <IoMdCreate size={24} />
+</div>
+
         </CardHeader>
 
         <div className="table-responsive">
@@ -45,7 +51,7 @@ const FoodCategoryTable = () => {
       </Card>
 
       {/* Create Category Modal */}
-      <Modal isOpen={modal} toggle={toggle} centered>
+      <Modal isOpen={modal} toggle={toggle} centered style={{height:'380px'}}>
         <ModalBody style={{ backgroundColor: '#1c1c1c', color: 'white' }}>
           <CreateFoodCategoryForm />
         </ModalBody>
