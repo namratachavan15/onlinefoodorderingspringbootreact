@@ -47,7 +47,7 @@ const OrderTable = ({ filterValue }) => {
       <Card className="mt-3 w-100" style={{ backgroundColor: '#191919', color: 'white' }}>
         <CardHeader className="d-flex">
           <h5>All Orders</h5>
-          <IoMdCreate className="ml-auto" style={{ cursor: 'pointer' }} />
+          {/* <IoMdCreate size={24} className="ml-auto" style={{ cursor: 'pointer' }} /> */}
         </CardHeader>
         <div className="table-responsive">
           <Table responsive className="table-dark mb-0">
@@ -74,6 +74,7 @@ const OrderTable = ({ filterValue }) => {
                           key={index}
                           src={orderItem.food?.images[0]}
                           alt={orderItem.food?.name}
+                          
                           width="50"
                           height="50"
                           style={{ marginRight: '5px' }}
