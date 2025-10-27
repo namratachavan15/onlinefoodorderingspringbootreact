@@ -51,7 +51,7 @@ const CreateIngredientForm = () => {
   };
 
   return (
-    <Container className="mt-5">
+    <Container className="m-3">
       <h1 className="text-center text-secondary mb-4">Create Ingredient</h1>
       <Row className="justify-content-center">
         <Col xs={12} sm={10} md={8} lg={6} style={{ width: "600px" }}>
@@ -64,6 +64,7 @@ const CreateIngredientForm = () => {
               boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
               border: "none",
               width: "400px",
+              
             }}
           >
             <FormGroup>
