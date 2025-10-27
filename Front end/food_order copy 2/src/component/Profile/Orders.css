@@ -1,0 +1,22 @@
+.container1
+{
+   width: 500px!important;
+}
+@media screen and (min-width: 500px) and (max-width:800px) {
+    .container1{
+        width: 534px !important;
+    }
+    
+        .sidebar {
+        width: 24% !important;
+    
+    }
+}
+
+@media screen and (max-width:500px) {
+
+    .container1{
+        width: 252px!important;
+        margin-top:46px!important;
+    }
+}
