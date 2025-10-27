@@ -38,8 +38,10 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (userData, navigate) => {
     setLoading(true);
+    console.log("userdata",userData)
     try {
       const { data } = await loginUser(userData);
+      console.log("data",data)
       setJwt(data.jwt);
       localStorage.setItem("jwt", data.jwt);
       await fetchUser(data.jwt);
