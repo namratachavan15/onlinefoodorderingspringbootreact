@@ -30,9 +30,13 @@ const RestaurantCard = ({ item }) => {
       navigate(`/restaurant/${item.address.city}/${item.name}/${item.id}`)
     }
 }
+const truncateText = (text, maxLength) => {
+  return text.length > maxLength ? text.slice(0, maxLength) + '...' : text;
+};
+
   return (
-    <Col sm={6} md={4} lg={3} className="d-flex justify-content-center mb-3">
-  <Card  style={{ backgroundColor: '#191919', color: '#6c757d',width:'300px' }}>
+    <Col className="card1" className="d-flex justify-content-center mb-3 p-5">
+  <Card  style={{ backgroundColor: '#191919', color: '#6c757d' }}>
     <div className={`${isOpen ? 'cursor-pointer' : 'cursor-not-allowed'} relative`}>
       <Card.Img
         variant="top"
@@ -49,10 +53,10 @@ const RestaurantCard = ({ item }) => {
       <div className="d-flex justify-content-between align-items-center">
         <div>
           <Card.Text onClick={handleNavigateTorestaurant} style={{ color: 'white' }}>{item.name}</Card.Text>
-          <Card.Text className="mb-0">{item.description}</Card.Text>
+          <Card.Text className="mb-0">{truncateText(item.description, 100)}</Card.Text>
         </div>
         <Button
-          variant="link"
+           variant="link"
           style={{
             color: 'white',
             padding: '0', 
