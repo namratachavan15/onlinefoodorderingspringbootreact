@@ -15,7 +15,6 @@ const Favorites = () => {
       }
       setLocalLoading(false);
     };
-
     loadUserIfNeeded();
   }, [jwt, user?.favorites?.length]);
 
@@ -31,7 +30,7 @@ const Favorites = () => {
   }
 
   return (
-    <div className='bg-dark' style={{ minHeight: '800px' }}>
+    <div  style={{}}>
       <h1 className="py-3 text-xl font-semibold text-center text-light">My Favourites</h1>
       {favourites.length > 0 ? (
         <Row className="d-flex ms-3">
