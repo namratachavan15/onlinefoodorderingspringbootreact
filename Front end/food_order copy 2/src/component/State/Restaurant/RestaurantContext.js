@@ -44,15 +44,13 @@ export const RestaurantProvider = ({ children }) => {
         }
       );
       setEvents((prevEvents) => [...prevEvents, data]);
-      setLoading(false);
-    
+      setLoading(false);   
     } catch (err) {
       setError(err);
       setLoading(false);
       console.log("Error creating event:", err);
     }
   };
-  
   
 
   // Get All Events
@@ -207,6 +205,8 @@ export const RestaurantProvider = ({ children }) => {
   // Get Restaurants by Category
   const getRestaurantsCategory = async ( restaurantId, jwt ) => {
     try {
+      console.log("restid",restaurantId);
+      console.log("jwt",jwt);
       const { data } = await api.get(`/api/category/restaurant/${restaurantId}`, {
         headers: {
           Authorization: `Bearer ${jwt}`,
