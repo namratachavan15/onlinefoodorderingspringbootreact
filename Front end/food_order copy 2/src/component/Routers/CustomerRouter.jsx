@@ -10,11 +10,12 @@ import RestaurantDetails from '../Restaurant/RestaurantDetails';
 import Auth from '../Auth/Auth';
 import PaymentSuccess from '../PaymentSuccess/PaymentSuccess';
 import SearchResults from '../Restaurant/SearchResults';
+import PaymentFailure from '../PaymentSuccess/PaymentFailure';
 
 const CustomerRouter = () => {
   return (
     <div>
-        <Navbar />
+        
         <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/account/:register' element={<Home />} />
@@ -22,7 +23,9 @@ const CustomerRouter = () => {
             {/* <Route path='/restaurant' element={<RestaurantDetails/>} /> */}
             <Route path='/cart' element={<Cart />} />
             <Route path='/my-profile/*' element={<Profile />} />
-            <Route path='/payment/success/' element={<PaymentSuccess/>} />
+            <Route path='/payment/success/:orderId' element={<PaymentSuccess/>} />
+            <Route path="/payment/failure" element={<PaymentFailure />} />
+
             <Route path='/search-results' element={<SearchResults/>} />
         </Routes>
         <Auth/>
