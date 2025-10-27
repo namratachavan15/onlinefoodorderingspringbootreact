@@ -37,7 +37,7 @@ const CreateIngredientCategoryForm = () => {
   };
 
   return (
-    <Container className="mt-5">
+    <Container className="m-3">
       <h3 className="text-center text-secondary mb-4">Create Ingredient Category</h3>
       <Row className="justify-content-center">
         <Col xs={12} sm={10} md={8} lg={6} style={{ width: "600px" }}>
@@ -47,6 +47,7 @@ const CreateIngredientCategoryForm = () => {
               backgroundColor: "#1c1c1c",
               padding: "30px",
               borderRadius: "12px",
+              marginLeft:'15px',
               boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
               border: "none",
               width: "400px",
