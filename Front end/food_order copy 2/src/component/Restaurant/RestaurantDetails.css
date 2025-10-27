@@ -1,0 +1,9 @@
+.menuItem{
+    
+}
+
+@media screen and (min-width:500px) {
+.menuItem{
+    width: 100px !important;
+}
+}
